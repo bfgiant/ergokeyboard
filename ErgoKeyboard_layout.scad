@@ -1,12 +1,11 @@
 spacing = 19.05; // mm
 
-//cutout([10,-75,0],-30);
-//translate([0,28,-2.5]) color([1,1,1]) cube([280,125,5],true);
+//cutout([10,-75,0],-30); // Example of cutout usage
+//translate([0,15.5,-2.5]) color([1,1,1]) cube([285,105,5],true); // bounding box
 half(); mirror([1,0,0]) color("grey") half();
 
 module half () {
     rotate(8.5) translate([1.75,0,0]*spacing) {
-//        translate([-1,0.5,0]*spacing) block([1,1]);
         color("yellow") mainBlock();
         color("red") bottomRow();
         color("blue") inside();
