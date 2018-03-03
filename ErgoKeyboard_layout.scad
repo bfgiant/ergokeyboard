@@ -2,26 +2,47 @@ spacing = 19.05; // mm
 
 //cutout([10,-75,0],-30);
 //translate([0,28,-2.5]) color([1,1,1]) cube([280,125,5],true);
-half(); mirror([1,0,0]) half();
+half(); mirror([1,0,0]) color("grey") half();
 
 module half () {
     rotate(8.5) translate([1.75,0,0]*spacing) {
 //        translate([-1,0.5,0]*spacing) block([1,1]);
-        thumbcluster();
-        block([4,5],[0,2.5,5,2.5,0]/10); // main block
-        translate([5,0,0]*spacing) block([3,1]); // pinky
+        color("yellow") mainBlock();
+        color("red") bottomRow();
+        color("blue") inside();
+        color("green") outside();
     }
 }
 
-module thumbcluster () {
-    translate([-0.85,-1.25,0]*spacing) rotate(15) {
-        block([2,1]);
-        translate([1.1,-0.1,0]*spacing) rotate(-7.5) {
-            block([1,1]);
-            translate([1.1,0.1,0]*spacing) rotate(-7.5) block([1,2]);
+module mainBlock () {
+    block([3,5],[0,0.125,0.25,0.125,-0.125]);
+}
+
+module bottomRow () {
+    translate([0,-1,0]*spacing) {
+        translate([1,0,0]*spacing) block([1,5],[.125,.25,.125,-.125,-.125]); // 5 in line
+        mov = -0.05; rot = 7.5;
+        translate([mov,mov,0]*spacing) rotate(rot) {
+            block([1,1]); // 1st thumb key
+            translate([mov-1,mov,0]*spacing) rotate(rot) {
+                block([1,1]); // 2nd thumb key
+            }
         }
     }
 }
+
+module inside () {
+    translate([-1,0,0]*spacing) block([2,1]);
+}
+
+module outside () {
+    translate([5,-0.125,0]*spacing) block([3,1]);
+}
+
+
+////////////////////////////
+// The "function" modules //
+////////////////////////////
 
 module block (size,shift) {
     // size: [rows, columns]
@@ -30,7 +51,7 @@ module block (size,shift) {
     columns = size[1];
     for(row = [1:rows]) {
         for(column = [1:columns]) {
-            if (len(shift) == undef) {
+            if (len(shift) == undef) { // if shift is not defined
                 scaled = [column-1,row-1,0]*spacing;
                 cutout(scaled,0);
             } else {
