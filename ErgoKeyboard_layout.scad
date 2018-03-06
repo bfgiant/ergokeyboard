@@ -61,7 +61,7 @@ module outside () {
 //   "Function" Modules   //
 ////////////////////////////
 
-module block (size,shift) {
+module block (size = [1,1],shift) {
     // size: [rows, columns]
     // shift: the absolute vertical shift, per column. 1 = 100% = 1 row up
     rows = size[0];
