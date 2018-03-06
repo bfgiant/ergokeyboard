@@ -17,7 +17,7 @@ key1_25 = s1_25 + spacing;
 /////////////////////////////
 
 //cutout(pos = [10,-75,0],rot = -10,size = s1_25); // Example of cutout usage
-translate([0,15.5,-2.5]) color([1,1,1]) cube([285,105,5],true); // bounding box
+translate([0,15.5,-2.5]) color([1,1,1]) cube([280,105,5],true); // bounding box
 half(); mirror([1,0,0]) color("grey") half();
 
 module half () {
@@ -35,7 +35,7 @@ module mainBlock () {
 
 module bottomRow () {
     translate([0,-1,0]*key1) {
-        translate([1,0,0]*key1) block([1,5],[.125,.25,.125,-.125,-.125]); // 5 in line
+        translate([1,0,0]*key1) block([1,4],[.125,.25,.125,-.125,-.125]); // 5 in line
         movx = -0.05;
         movy = movx - 0.01;
         rot = 7.5;
