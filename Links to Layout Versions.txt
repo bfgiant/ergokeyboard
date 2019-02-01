@@ -1,5 +1,5 @@
 v0: https://configure.ergodox-ez.com/keyboard_layouts/kxovoa/edit
-v1: https://configure.ergodox-ez.com/keyboard_layouts/kpdxjy/edit
+v1: https://configure.ergodox-ez.com/keyboard_layouts/kpdxjy/edit (trying reduced layout for Atreus practice)
 v2: 
 v3: 
 
