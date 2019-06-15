@@ -1,8 +1,8 @@
 v0: https://configure.ergodox-ez.com/keyboard_layouts/kxovoa/edit
 v1: https://configure.ergodox-ez.com/keyboard_layouts/kpdxjy/edit (trying reduced layout for Atreus practice)
 v2: https://configure.ergodox-ez.com/ergodox-ez/layouts/7vmNr/latest/3
-v3: 
+v3: https://configure.ergodox-ez.com/ergodox-ez/layouts/VqZXj/latest/0  Rshift->caps lock
 
 Layouts in use for long periods of time:
-p0 = v0 ~ v2
-p1: 
+p0 = v0 ~ v2 ~ v3
+
